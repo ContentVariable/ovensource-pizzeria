@@ -4,7 +4,7 @@
 @plugin 'tailwind-scrollbar';
 
 @theme {
-  --font-sans: "Roboto Mono", "monospace";
+  --font-sans: "Roboto Mono", "monospace", sans-serif;
   --breakpoint-3xl: 120rem;
 }
 
