@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@plugin 'tailwind-scrollbar';
+
+@theme {
+  --font-sans: "Roboto Mono", "monospace";
+  --breakpoint-3xl: 120rem;
+}
+
+@utility pizza-background {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(249, 251, 247, 0.98) 75%,
+      rgba(249, 251, 247, 0.95) 90%,
+      rgba(249, 251, 247, 0.85)
+    ),
+    url(../src/assets/ovensource_pizza_bg.png);
+}
+
+@layer components {
+  /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+  .loader {
+    width: 45px;
+    aspect-ratio: 0.75;
+    --c: no-repeat linear-gradient(theme(--color-stone-800) 0 0);
+    background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+    background-size: 20% 50%;
+    animation: loading 1s infinite linear;
+  }
+
+  @keyframes loading {
+    20% {
+      background-position: 0% 0%, 50% 50%, 100% 50%;
+    }
+    40% {
+      background-position: 0% 100%, 50% 0%, 100% 50%;
+    }
+    60% {
+      background-position: 0% 50%, 50% 100%, 100% 0%;
+    }
+    80% {
+      background-position: 0% 50%, 50% 50%, 100% 100%;
+    }
+  }
+}
